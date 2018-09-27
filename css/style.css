@@ -1,0 +1,61 @@
+html,
+body {
+    height: 100%;
+}
+
+input[type="radio"]{
+    visibility:hidden;
+}
+#ques1{ 
+	margin-top: 350px;
+	margin-bottom: 50px;
+}
+#subg{
+	margin-bottom: 20px;
+}
+.question{
+	padding-bottom: 20px;
+}
+.gap{
+	margin-top:10px;
+}
+
+span.badge{
+	float: left;
+	padding-left: 0.5px;
+	padding-right: 0.5
+}
+span.title{
+	float: right;
+}
+
+#submit{
+	margin-top:100px; 
+	margin-bottom: 300px;
+}
+#ques2{
+	opacity: 0.4;
+	transform-style: preserve-3d;
+	transition: 0.3s;
+	margin-bottom: 100px;
+}
+.active{
+	background-color: #fff;
+}
+#image{
+	padding-top:250px ;
+}
+#image h5{
+	margin-top:50px ;
+}
+
+
+
+
+/*.row {
+	margin: 300px auto;
+    /*height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
