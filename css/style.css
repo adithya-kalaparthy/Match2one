@@ -4,8 +4,10 @@ body {
 }
 
 input[type="radio"]{
-    visibility:hidden;
+    display: none;
 }
+
+
 #ques1{ 
 	margin-top: 350px;
 	margin-bottom: 50px;
@@ -33,14 +35,16 @@ span.title{
 	margin-top:100px; 
 	margin-bottom: 300px;
 }
+.invisible{
+	visibility: hidden;
+}
 #ques2{
-	opacity: 0.4;
 	transform-style: preserve-3d;
 	transition: 0.3s;
-	margin-bottom: 100px;
+	margin-bottom: 300px;
 }
-.active{
-	background-color: #fff;
+#ques2 li{
+	margin-top:10px;
 }
 #image{
 	padding-top:250px ;
@@ -49,7 +53,13 @@ span.title{
 	margin-top:50px ;
 }
 
+@media(max-width: 576px){
 
+	.changes{
+		margin-top: 50px;
+	}
+
+}
 
 
 /*.row {
