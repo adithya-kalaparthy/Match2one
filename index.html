@@ -14,9 +14,10 @@
 
    <div class="container h-100 d-flex justify-content-center align-items-center" id="sub">
       <div class="row" >
-        <button class="btn btn-primary btn-lg" onclick="disappear()">Click Me to Start</button>
+        <button class="btn btn-primary btn-lg" id = "start" onclick="disappear()">Click Me to Start</button>
+        <div class="container">or press enter</div>
       </div>
-    </div>
+    </div> 
 
     
     <div class="container d-none" id="ques1">
@@ -27,11 +28,11 @@
         </div>
         <div class="col-lg-12 offset-lg-1">
           <div class="quiz col-sm-12 col-lg-12" id="quiz" data-toggle="buttons">
-              <label class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" id ="cat" value="1"><span class="badge">A</span><span class="title">Cat</span></label>
+              <label id ="cat" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="1"><span class="badge">A</span><span class="title">Cat</span></label>
 
-              <label class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" id = "dog" value="1"><span class="badge">B</span><span class="title">Dog</span></label>
+              <label id = "dog" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="1"><span class="badge">B</span><span class="title">Dog</span></label>
 
-              <label class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" id="panda" value="1"><span class="badge">C</span><span class="title">Panda</span></label>
+              <label id="panda" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="1"><span class="badge">C</span><span class="title">Panda</span></label>
 
           </div>
         </div>
@@ -39,19 +40,19 @@
     </div>
 
 
-    <div class="container d-none" id="ques2">
+    <div class="container d-none invisible" id="ques2">
       <div class="row">
         <div class="container-fluid">
-          <h3 class="question">2. Select a Name for your pet</h3>
+          <h3 class="question" id = "question2">2. Select a Name for your pet</h3>
           <h6 class="offset-lg-1"> This is Your second Question</h6>
         </div>
-        <div class="col-lg-12 offset-lg-1">
+        <div class="col-lg-12 offset-lg-1" data-toggle="buttons">
          <ul class="quiz col-lg-12 col-sm-12 list-group" id="quiz" data-toggle="buttons">
-              <li class="list-group-item btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 crazy"><input type="radio" name="animal" id ="cat" value="1"><span class="badge">A</span><span class="title">Chelsea</span></li>
+              <input type="radio" name="op1" value="1"><li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">A</span><span class="title" id ="2option1">Chelsea</span></li>
 
-              <li class="list-group-item btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 crazy"><input type="radio" name="animal" id = "dog" value="1"><span class="badge">B</span><span class="title">Koda</span></li>
+              <input type="radio" name="op1" value="1"><li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">B</span><span class="title" id ="2option2">Koda</span></li>
 
-              <li class="list-group-item btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 crazy"><input type="radio" name="animal" id="panda" value="1"><span class="badge">C</span><span class="title">Cooper</span></li>
+              <input type="radio" name="op1" value="1"><li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">C</span><span class="title" id ="2option3">Cooper</span></li>
 
           </ul>
         </div>
@@ -62,7 +63,11 @@
 
 
     <div class="container submit col-lg-12 d-none" id="submit">
-      <button class="btn btn-dark col-lg-2 offset-lg-5" onclick="disappear2()">Submit Here</button>
+      <div class="row justify-content-around">
+      <button class="btn btn-dark col-lg-2 col-11" id ="submitb"  onclick="disappear2()">Submit Here</button>
+
+      <button class="btn btn-dark col-lg-3 col-11 changes">Change your answers</button>
+    </div>
     </div>
 
     <div class="text-center h-100 d-none" id="image">
