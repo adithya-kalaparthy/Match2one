@@ -14,7 +14,7 @@ window.addEventListener("keypress", event => {
 /*The starting function which removes the start button from screen and displays the 1st question*/
 function disappear() {
   jQuery(function($){
-    var h = $('#ques1').offset().top - 150; //height to be scrolled
+    var h = $('#ques1').offset().top - 250; //height to be scrolled
     $('html, body').animate({ scrollTop: h }, 600);
     $('body').css({'height': 'auto'});
   });
