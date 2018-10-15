@@ -44,7 +44,7 @@ function disappear2() {
     document.getElementById('image').className = "text-center h-100 q";
    }
    else{
-    alert("Please answer both the questions")
+    alert("Please scroll up to answer both the questions")
    }
    
    }
