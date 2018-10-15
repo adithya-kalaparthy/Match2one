@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: #f5f5dc;">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Pet land</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Nanum+Gothic|Open+Sans|Raleway|Titillium+Web|Ubuntu" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
-  <body class="bg-light">
+  <body style="background-color: #f5f5dc;">
 
 
-   <div class="container h-100 d-flex justify-content-center align-items-center" id="sub">
-      <div class="row" >
+  <div class="container h-100 d-flex col-12" id="sub">
+      <div class="row col-12 justify-content-center align-items-center" >
         <button class="btn btn-primary btn-lg" id = "start" onclick="disappear()">Click Me to Start</button>
-        <div class="container">or press enter</div>
+        <p class = "ent">or press <span class="text-uppercase font-weight-bold">enter</span></p>
       </div>
     </div> 
 
     
-    <div class="container d-none" id="ques1">
+   <div class="container d-none" id="ques1"> 
       <div class="row">
         <div class="container-fluid">
           <h3 class="question">1. What is your favourite animal</h3>
@@ -28,11 +29,12 @@
         </div>
         <div class="col-lg-12 offset-lg-1">
           <div class="quiz col-sm-12 col-lg-12" id="quiz" data-toggle="buttons">
-              <label id ="cat" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="1"><span class="badge">A</span><span class="title">Cat</span></label>
+            
+              <button id ="cat" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="cat"><span class="badge">A</span><span class="title">Cat</span></button>
 
-              <label id = "dog" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="1"><span class="badge">B</span><span class="title">Dog</span></label>
+              <button id = "dog" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="dog"><span class="badge">B</span><span class="title">Dog</span></button>
 
-              <label id="panda" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="1"><span class="badge">C</span><span class="title">Panda</span></label>
+              <button id="panda" class="btn btn-lg btn-outline-dark col-lg-3 col-sm-12 col-md-3 gap"><input type="radio" name="animal" value="panda"><span class="badge">C</span><span class="title">Panda</span></button>
 
           </div>
         </div>
@@ -40,40 +42,39 @@
     </div>
 
 
-    <div class="container d-none invisible" id="ques2">
+    <div class="container d-none" id="ques2" > 
       <div class="row">
         <div class="container-fluid">
           <h3 class="question" id = "question2">2. Select a Name for your pet</h3>
           <h6 class="offset-lg-1"> This is Your second Question</h6>
         </div>
         <div class="col-lg-12 offset-lg-1" data-toggle="buttons">
-         <ul class="quiz col-lg-12 col-sm-12 list-group" id="quiz" data-toggle="buttons">
-              <input type="radio" name="op1" value="1"><li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">A</span><span class="title" id ="2option1">Chelsea</span></li>
+         <ul class="quiz col-lg-12 col-sm-12 list-group" id="quiz2" data-toggle="buttons">
+              <li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">A</span><input type="radio" name="op1" id = "2op1"><span class="title" id ="2option1">Chelsea</span></li>
 
-              <input type="radio" name="op1" value="1"><li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">B</span><span class="title" id ="2option2">Koda</span></li>
+              <li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">B</span><input type="radio" name="op1" id = "2op2"><span class="title" id ="2option2">Koda</span></li>
 
-              <input type="radio" name="op1" value="1"><li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">C</span><span class="title" id ="2option3">Cooper</span></li>
+              <li class="list-group-item btn btn-lg btn-outline-dark col-lg-4 col-sm-12 col-md-3 crazy"><span class="badge">C</span><input type="radio" name="op1" id = "2op3"><span class="title" id ="2option3">Cooper</span></li>
 
           </ul>
         </div>
       </div>
     </div>
 
-    <hr>
 
 
-    <div class="container submit col-lg-12 d-none" id="submit">
-      <div class="row justify-content-around">
-      <button class="btn btn-dark col-lg-2 col-11" id ="submitb"  onclick="disappear2()">Submit Here</button>
-      <p>or press enter to submit</p>
-      <button class="btn btn-dark col-lg-3 col-11 changes">Change your answers</button>
+    <div class="container submit col-lg-12 d-none" id="submit">   
+      <hr id="line"> 
+      <div class="row offset-lg-2 justify-content-lg-start justify-content-center submit">
+        <button class="btn btn-dark col-lg-2 col-11" id ="submitb" onclick="disappear2()">Submit Here</button>
+        <p class = "ent">or press <span class="text-uppercase font-weight-bold">enter</span></p> 
     </div>
     </div>
 
     <div class="text-center h-100 d-none" id="image">
-      <img src="thanks.gif" class="rounded" width="250" height="200">
+      <img src="thanks.gif" class="rounded border border-dark" width="250" height="200">
       <div class="container">
-        <h5> Thank you for submitting the form</h5>
+        <h5> You have chosen <span class="text-uppercase font-weight-bold" id="val1">op1</span> for 1st question and <span class="text-uppercase font-weight-bold" id="val2">op2</span> for the second question </h5>
       </div>
     </div>
 
@@ -83,7 +84,6 @@
     <script  src="https://code.jquery.com/jquery-3.3.1.js"  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/scrollreveal@3.3.2/dist/scrollreveal.min.js"></script>
     <script src="scroll.js">
     </script>
   </body>
