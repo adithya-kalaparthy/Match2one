@@ -46,6 +46,7 @@ span.title{
 	visibility: hidden;
 }
 #ques2{
+	padding-bottom: 100px;
 	transform-style: preserve-3d;
 }
 #ques2 li{
@@ -75,19 +76,21 @@ span.title{
 	margin-left: none;
 	}
 }
-
+/*animation for fade in*/
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+/*spinner*/
 .loader {
-    border: 2px solid #ffffff; /* Light grey */
-    border-top: 2px solid #ff0000; /* Blue */
+    border: 2px solid #ffffff; /* white */
+    border-top: 2px solid #ff0000; /* red */
     border-radius: 50%;
     width: 20px;
     height: 20px;
     animation: spin 2s ease infinite;
 }
+/*spinner animation*/
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
