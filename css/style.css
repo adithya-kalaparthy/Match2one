@@ -7,11 +7,13 @@ input[type="radio"]{
     display: none;
 }
 
-
 #ques1{ 
 	margin-top: 350px;
 	margin-bottom: 50px;
 }
+#ques1 h3, #ques1 h6, #ques2 h3,#ques2 h6, #ques1 .title, #ques2 .title, #image h5, #image span{
+	font-family: 'Nanum Gothic';
+	}
 #subg{
 	margin-bottom: 20px;
 }
@@ -25,23 +27,27 @@ input[type="radio"]{
 span.badge{
 	float: left;
 	padding-left: 0.5px;
-	padding-right: 0.5
+	padding-right: 0.5;
+	align-items: middle;
 }
 span.title{
 	float: right;
+	align-items: middle;
 }
 
-#submit{
+#line{
+	margin-top: 100px;
+}
+.submit{
 	margin-top:100px; 
 	margin-bottom: 300px;
 }
+
 .invisible{
 	visibility: hidden;
 }
 #ques2{
 	transform-style: preserve-3d;
-	transition: 0.3s;
-	margin-bottom: 300px;
 }
 #ques2 li{
 	margin-top:10px;
@@ -53,19 +59,25 @@ span.title{
 	margin-top:50px ;
 }
 
+.q{
+	-webkit-animation: fadein 2s;
+}
+.ent{
+	margin-top: 20px;
+	margin-left: 10px;
+}
 @media(max-width: 576px){
 
 	.changes{
 		margin-top: 50px;
 	}
-
+	#ent{
+	margin-top: 20px;
+	margin-left: none;
+	}
 }
 
-
-/*.row {
-	margin: 300px auto;
-    /*height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
