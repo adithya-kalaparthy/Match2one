@@ -23,11 +23,12 @@ function disappear() {
   jQuery(function($){
     var h = $('#ques1').offset().top - 150; //height to be scrolled
     $('html, body').animate({ scrollTop: h }, 600);
+    $('body').css({'height': 'auto'});
   });
    document.getElementById('sub').className = "d-none";
-   document.getElementById('ques1').className = "container";
-   document.getElementById('ques2').className = "container invisible"; /**/
-   document.getElementById('submit').className = "container submit col-lg-12 invisible"; /**/
+   document.getElementById('ques1').className = "container q";
+   document.getElementById('ques2').className = "container d-none"; /**/
+   document.getElementById('submit').className = "container submit col-lg-12 d-none"; /**/
    };
 
 
@@ -37,11 +38,12 @@ function disappear2() {
    if ($('input[name=animal]:checked', '#quiz').val() && $('input[name=op1]:checked', '#quiz2').val() ) {
     document.getElementById('val1').innerHTML = $('input[name=animal]:checked', '#quiz').val();
     document.getElementById('val2').innerHTML = $('input[name=op1]:checked', '#quiz2').val();
-    document.getElementById('ques1').className = "d-none";
-    document.getElementById('ques2').className = "d-none";
-    document.getElementById('submit').className = "d-none";
-    document.getElementById('line').className = "d-none";
-    document.getElementById('image').className = "text-center h-100 q";
+    document.getElementById('spinner').className="float-right loader" 
+    setTimeout(() => { document.getElementById('ques1').className = "d-none";
+      document.getElementById('ques2').className = "d-none";
+      document.getElementById('submit').className = "d-none";
+      document.getElementById('line').className = "d-none";
+      document.getElementById('image').className = "text-center h-100 q"; },2000)
    }
    else{
     alert("Please scroll up to answer both the questions")
@@ -51,7 +53,7 @@ function disappear2() {
 
 $("#quiz input").on('change',function(){
 
-  /*document.getElementById('ques2').className = "container active";*/
+  document.getElementById('ques2').className = "container q";
   var n = $('#ques2').offset().top -100; //height to be scrolled
   $('html, body').animate({ scrollTop: n }, 1000);
   if( $('input[name=animal]:checked', '#quiz').val() == "cat"){
@@ -91,24 +93,24 @@ $( window).scroll(function(){
       document.getElementById("ques2").className = "d-none"
       document.getElementById("submit").className = "d-none";
     }
-    else {
+    else if ($('input[name=animal]:checked', '#quiz').val()) {
     if ( n > $('#ques1').offset().top-50 && n < $('#ques2').offset().top+50) {
       document.getElementById("ques1").className = "container invisible";
       document.getElementById("ques2").className = "container q"
       document.getElementById("submit").className = "container submit col-lg-12 invisible"; /*invisible*/
     }
-    else if ( n < $('#ques1').offset().top-100){
+    else if ( n < $('#ques1').offset().top-50){
      document.getElementById("ques1").className = "container q";
      document.getElementById("ques2").className = "container invisible"
      document.getElementById("submit").className = "container submit col-lg-12 invisible"; /*invisible*/
     }
-    else if ( n > $('#ques2').offset().top){
+    else if ( n > $('#ques2').offset().top+50){
       document.getElementById("ques1").className = "container invisible";
       document.getElementById("ques2").className = "container invisible"; 
       document.getElementById("submit").className = "container submit col-lg-12 q";
     }
-
   }
+
 });
 
 
