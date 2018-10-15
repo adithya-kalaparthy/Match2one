@@ -12,7 +12,7 @@
   </head>
   <body style="background-color: #f5f5dc;">
 
-
+  <!--start button display-->
   <div class="container h-100 d-flex col-12" id="sub">
       <div class="row col-12 justify-content-center align-items-center" >
         <button class="btn btn-primary btn-lg" id = "start" onclick="disappear()">Click Me to Start</button>
@@ -20,7 +20,7 @@
       </div>
     </div> 
 
-    
+  <!--1st question-->  
    <div class="container d-none" id="ques1"> 
       <div class="row">
         <div class="container-fluid">
@@ -41,7 +41,7 @@
       </div>
     </div>
 
-
+    <!-- 2nd question. This changes dynamically with the help of Javascript-->
     <div class="container d-none" id="ques2" > 
       <div class="row">
         <div class="container-fluid">
@@ -62,15 +62,16 @@
     </div>
 
 
-
+  <!--submit button-->
     <div class="container submit col-lg-12 d-none" id="submit">   
       <hr id="line"> 
       <div class="row offset-lg-2 justify-content-lg-start justify-content-center submit">
-        <button class="btn btn-dark col-lg-3 col-11" id ="submitb" onclick="disappear2()">Submit Here <div class=" float-right d-none loader" id="spinner"></div></button>
+        <button class="btn btn-dark col-lg-3 col-11" id ="submitb" onclick="disappear2()">Submit Here <div class=" float-right d-none loader" id="spinner"></div></button><!--..Spinner is presently not displayed it is activated only when submit button is pressed..-->
         <p class = "ent">or press <span class="text-uppercase font-weight-bold">enter</span></p> 
     </div>
     </div>
 
+    <!--Image dispaly-->
     <div class="text-center h-100 d-none" id="image">
       <img src="thanks.gif" class="rounded border border-dark" width="250" height="200">
       <div class="container">
