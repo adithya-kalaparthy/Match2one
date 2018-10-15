@@ -3,14 +3,6 @@ window.addEventListener("keypress", event => {
     if (event.keyCode == 13 && $('#sub').attr('class')=="container h-100 d-flex col-12") {
       $("#start").click();
     }
-    else if( event.keyCode == 13 && $('#ques1').attr('class') == 'container q' ){
-      var n = $('#ques2').offset().top -100; //height to be scrolled
-      $('html, body').animate({ scrollTop: n }, 1000);
-    }
-    else if( event.keyCode == 13 && $('#ques2').attr('class') == 'container q' ){
-      var n = $('#submit').offset().top; //height to be scrolled
-      $('html, body').animate({ scrollTop: n }, 1000);
-    }
     else if( event.keyCode == 13 && $('#submit').attr('class') == 'container submit col-lg-12 q' ){
       $("#submitb").click();
     }
@@ -52,10 +44,11 @@ function disappear2() {
    }
 
 $("#quiz input").on('change',function(){
-
+  
   document.getElementById('ques2').className = "container q";
-  var n = $('#ques2').offset().top -100; //height to be scrolled
-  $('html, body').animate({ scrollTop: n }, 1000);
+  document.getElementById('ques1').className="container invisible"
+  var n = $('#ques2').offset().top; //height to be scrolled
+  $('html, body').animate({ scrollTop: n });
   if( $('input[name=animal]:checked', '#quiz').val() == "cat"){
       document.getElementById("question2").innerHTML = "2.What do you wanna name your cat?";
       document.getElementById("2option1").innerHTML="oliver";
@@ -93,30 +86,43 @@ $( window).scroll(function(){
       document.getElementById("ques2").className = "d-none"
       document.getElementById("submit").className = "d-none";
     }
-    else if ($('input[name=animal]:checked', '#quiz').val()) {
-    if ( n > $('#ques1').offset().top-50 && n < $('#ques2').offset().top+50) {
-      document.getElementById("ques1").className = "container invisible";
-      document.getElementById("ques2").className = "container q"
-      document.getElementById("submit").className = "container submit col-lg-12 invisible"; /*invisible*/
+    else if ( $('input[name=animal]:checked', '#quiz').val() && !$('input[name=op1]:checked', '#quiz2').val() ) {
+      if (n < $('#ques1').offset().top-200){
+        document.getElementById('ques1').className="container q";
+        document.getElementById('ques2').className='container invisible';
+        console.log(n);
+      }
+      else if (n > $('#ques1').offset().top-200 && n < $('#ques2').offset().top +50 ) {
+        document.getElementById('ques1').className="container invisible";
+        document.getElementById('ques2').className='container q';
+        console.log(n);
+      }
     }
-    else if ( n < $('#ques1').offset().top-50){
-     document.getElementById("ques1").className = "container q";
-     document.getElementById("ques2").className = "container invisible"
-     document.getElementById("submit").className = "container submit col-lg-12 invisible"; /*invisible*/
+    else if ( $('input[name=animal]:checked', '#quiz').val() && $('input[name=op1]:checked', '#quiz2').val()) {
+      if (n < $('#ques1').offset().top-50) {
+        document.getElementById('ques1').className="container q"
+        document.getElementById('ques2').className='container invisible'
+        document.getElementById('submit').className='container submit col-lg-12 invisible'
+      }
+      else if (n > $('#ques1').offset().top-50 && n < $('#ques2').offset().top +100 ) {
+        document.getElementById('ques1').className="container invisible"
+        document.getElementById('ques2').className='container q'
+        document.getElementById('submit').className='container submit col-lg-12 invisible'
+      }
+      else if (n > $('#ques2').offset().top+100) {
+        document.getElementById('ques1').className="container invisible"
+        document.getElementById('ques2').className='container invisible'
+        document.getElementById('submit').className='container submit col-lg-12 q'
+      }
     }
-    else if ( n > $('#ques2').offset().top+50){
-      document.getElementById("ques1").className = "container invisible";
-      document.getElementById("ques2").className = "container invisible"; 
-      document.getElementById("submit").className = "container submit col-lg-12 q";
-    }
-  }
-
 });
 
 
 
 $(".crazy").click(function(event){
+  document.getElementById('submit').className="container submit col-lg-12 q";
+  document.getElementById('ques2').className="container invisible";
   var n = $('#submit').offset().top; //height to be scrolled
-  $('html, body').animate({ scrollTop: n },1000);
+  $('html, body').animate({ scrollTop: n });
   /*invisible*/
 });
