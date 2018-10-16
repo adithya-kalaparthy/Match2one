@@ -45,13 +45,10 @@ function disappear2() {
    }
 /*This function happens when user selects any option for the 1st question*/
 $("#quiz input").on('change',function(){
-  
-  document.getElementById('ques2').className = "container q"; /*display the 2nd question*/
-  document.getElementById('ques1').className="container invisible" /*make the 1st question invisible*/
-  var n = $('#ques2').offset().top; //height to be scrolled
-  $('html, body').animate({ scrollTop: n }); /*animation of scroll function. Delay hass been removed so it doesnot clash with autoscroll*/
-  /*these if conditions check which option has been selected and changes the 2nd question and options appropriately */
   if( $('input[name=animal]:checked', '#quiz').val() == "cat"){
+      $('#ch1').css({'display':'block'});
+      $('#ch2').css({'display':'none'});
+      $('#ch3').css({'display':'none'});
       document.getElementById("question2").innerHTML = "2.What do you wanna name your cat?";
       document.getElementById("2option1").innerHTML="oliver";
       document.getElementById("2op1").value="oliver";
@@ -61,6 +58,9 @@ $("#quiz input").on('change',function(){
       document.getElementById("2op3").value="Tom";
   }
   else if( $('input[name=animal]:checked', '#quiz').val() == "dog"){
+      $('#ch1').css({'display':'none'});
+      $('#ch2').css({'display':'block'});
+      $('#ch3').css({'display':'none'});
       document.getElementById("question2").innerHTML = "2.Which breed of dog do you want?";
       document.getElementById("2option1").innerHTML="Golden Retriver";
       document.getElementById("2op1").value="Golden Retriver";
@@ -70,6 +70,9 @@ $("#quiz input").on('change',function(){
       document.getElementById("2op3").value="Dalmation";
   }
   else if( $('input[name=animal]:checked', '#quiz').val() == "panda"){
+      $('#ch1').css({'display':'none'});
+      $('#ch2').css({'display':'none'});
+      $('#ch3').css({'display':'block'});
       document.getElementById("question2").innerHTML = "2.What color of Panda do you like?";
       document.getElementById("2option1").innerHTML="White";
       document.getElementById("2op1").value="White";
@@ -78,7 +81,13 @@ $("#quiz input").on('change',function(){
       document.getElementById("2option3").innerHTML="Chocolate";
       document.getElementById("2op3").value="Chocolate";
   }
-
+  setTimeout(() => {
+  document.getElementById('ques2').className = "container q"; /*display the 2nd question*/
+  document.getElementById('ques1').className="container inactive" /*make the 1st question invisible*/
+  var n = $('#ques2').offset().top; //height to be scrolled
+  $('html, body').animate({ scrollTop: n }); /*animation of scroll function. Delay hass been removed so it doesnot clash with autoscroll*/
+  /*these if conditions check which option has been selected and changes the 2nd question and options appropriately */
+      },1000);
  });
 
 /*auto scroll function*/
@@ -94,30 +103,28 @@ $( window).scroll(function(){
     else if ( $('input[name=animal]:checked', '#quiz').val() && !$('input[name=op1]:checked', '#quiz2').val() ) {
       if (n < $('#ques1').offset().top-200){
         document.getElementById('ques1').className="container q";
-        document.getElementById('ques2').className='container invisible';
-        console.log(n);
+        document.getElementById('ques2').className='container inactive';
       }
       else if (n > $('#ques1').offset().top-200 && n < $('#ques2').offset().top +50 ) {
-        document.getElementById('ques1').className="container invisible";
+        document.getElementById('ques1').className="container inactive";
         document.getElementById('ques2').className='container q';
-        console.log(n);
       }
     }
     /*the following else if works if both the questions are answered and if user decides to change any of their answers*/
     else if ( $('input[name=animal]:checked', '#quiz').val() && $('input[name=op1]:checked', '#quiz2').val()) {
       if (n < $('#ques1').offset().top-50) {
         document.getElementById('ques1').className="container q"
-        document.getElementById('ques2').className='container invisible'
+        document.getElementById('ques2').className='container inactive'
         document.getElementById('submit').className='container submit col-lg-12 invisible'
       }
       else if (n > $('#ques1').offset().top-50 && n < $('#ques2').offset().top +100 ) {
-        document.getElementById('ques1').className="container invisible"
+        document.getElementById('ques1').className="container inactive"
         document.getElementById('ques2').className='container q'
-        document.getElementById('submit').className='container submit col-lg-12 invisible'
+        document.getElementById('submit').className='container submit col-lg-12 inactive'
       }
       else if (n > $('#ques2').offset().top+100) {
         document.getElementById('ques1').className="container invisible"
-        document.getElementById('ques2').className='container invisible'
+        document.getElementById('ques2').className='container inactive'
         document.getElementById('submit').className='container submit col-lg-12 q'
       }
     }
@@ -126,8 +133,24 @@ $( window).scroll(function(){
 
 /*this function is activated by answering the second question*/
 $(".crazy").click(function(event){
+  if(this.id=='sop1'){
+    $('#ch4').css({'display':'block'});
+    $('#ch5').css({'display':'none'});
+    $('#ch6').css({'display':'none'});
+  }
+  else if(this.id=='sop2'){
+    $('#ch4').css({'display':'none'});
+    $('#ch5').css({'display':'block'});
+    $('#ch6').css({'display':'none'});
+  }
+  else if(this.id=='sop3'){
+    $('#ch4').css({'display':'none'});
+    $('#ch5').css({'display':'none'});
+    $('#ch6').css({'display':'block'});
+  }
+  setTimeout(() => {
   document.getElementById('submit').className="container submit col-lg-12 q"; /*display the submit button*/
-  document.getElementById('ques2').className="container invisible";/*make the second question invisible*/
+  document.getElementById('ques2').className="container inactive";/*make the second question invisible*/
   var n = $('#submit').offset().top; //height to be scrolled
-  $('html, body').animate({ scrollTop: n });
+  $('html, body').animate({ scrollTop: n }); },1000)
 });
