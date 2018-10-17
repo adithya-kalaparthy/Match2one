@@ -4,6 +4,31 @@ window.addEventListener("keypress", event => {
     if (event.keyCode == 13 && $('#sub').attr('class')=="container h-100 d-flex col-12") {
       $("#start").click();
     }
+    /*The following else if is to key press functionality for buttons in 1st question*/
+    else if ($('#ques1').attr('class') == "container q") {
+        if (event.keyCode==97) {
+          $('#cat').click();
+        }
+        else if (event.keyCode==98) {
+          $('#dog').click();
+        }
+        else if (event.keyCode==99) {
+          $('#panda').click();
+        }
+      }
+      /*The following else if is to key press functionality for buttons in 2nd question*/
+      else if ($('#ques2').attr('class') == "container q") {
+        if (event.keyCode==97) {
+          $('#sop1').click();
+        }
+        else if (event.keyCode==98) {
+          $('#sop2').click();
+        }
+        else if (event.keyCode==99) {
+          $('#sop3').click();
+        }
+      }
+      
     else if( event.keyCode == 13 && $('#submit').attr('class') == 'container submit col-lg-12 q' ){
       $("#submitb").click();
     }
@@ -14,7 +39,7 @@ window.addEventListener("keypress", event => {
 /*The starting function which removes the start button from screen and displays the 1st question*/
 function disappear() {
   jQuery(function($){
-    var h = $('#ques1').offset().top - 250; //height to be scrolled
+    var h = $('#ques1').offset().top - 200; //height to be scrolled
     $('html, body').animate({ scrollTop: h }, 600);
     $('body').css({'height': 'auto'});
   });
@@ -45,6 +70,7 @@ function disappear2() {
    }
 /*This function happens when user selects any option for the 1st question*/
 $("#quiz input").on('change',function(){
+  console.log(this.id);
   if( $('input[name=animal]:checked', '#quiz').val() == "cat"){
       $('#ch1').css({'display':'block'});
       $('#ch2').css({'display':'none'});
