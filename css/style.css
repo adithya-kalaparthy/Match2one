@@ -31,17 +31,21 @@ input[type="radio"]{
 }
 
 span.badge{
-	float: left;
-	padding-left: 0.5px;
+	/*float: left;*/
+	/*padding-left: 0.5px;*/
 	margin-top: 6px;
-	align-items: middle;
+	border:solid;
+	/*align-items: middle;*/
 }
 span.title{
 	float: right;
+	/*margin-top: 3px;*/ 
 	margin-right:8px;  
 	align-items: middle;
 }
-
+p{
+	font-size: 15px;
+}
 
 #line{
 	margin-top: 100px;
