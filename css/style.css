@@ -35,6 +35,7 @@ span.badge{
 	/*padding-left: 0.5px;*/
 	margin-top: 6px;
 	border:solid;
+	font-size:15px;
 	/*align-items: middle;*/
 }
 span.title{
@@ -45,6 +46,9 @@ span.title{
 }
 p{
 	font-size: 15px;
+}
+#ques1 p, #ques2 p{
+	font-size: 10px;
 }
 
 #line{
