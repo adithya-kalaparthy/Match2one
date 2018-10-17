@@ -23,16 +23,25 @@ input[type="radio"]{
 	margin-top:10px;
 }
 
+.checker{
+	float:right;
+	padding-left: 8px;
+	margin-top: 5px; 
+	display: none;
+}
+
 span.badge{
 	float: left;
 	padding-left: 0.5px;
-	padding-right: 0.5;
+	margin-top: 6px;
 	align-items: middle;
 }
 span.title{
 	float: right;
+	margin-right:8px;  
 	align-items: middle;
 }
+
 
 #line{
 	margin-top: 100px;
@@ -95,3 +104,26 @@ span.title{
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 	}
+
+.active{
+	animation: blinker 1s linear infinite;
+	animation-iteration-count: 1;
+}
+@keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  25%{
+  	opacity: 1;
+  }
+  50%{
+  	opacity: 0;
+  }
+  100%{
+  	opacity: 1;
+  }
+}
+
+.inactive{
+	opacity: 0.3;
+}
