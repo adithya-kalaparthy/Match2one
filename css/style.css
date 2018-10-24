@@ -26,21 +26,22 @@ input[type="radio"]{
 .checker{
 	float:right;
 	padding-left: 8px;
-	margin-top: 5px; 
+	margin-top: 8px; 
 	display: none;
 }
 
 span.badge{
 	/*float: left;*/
 	/*padding-left: 0.5px;*/
-	margin-top: 6px;
+	margin-left:5px;
+	margin-top: 7px;
 	border:solid;
 	font-size:15px;
 	/*align-items: middle;*/
 }
 span.title{
 	float: right;
-	/*margin-top: 3px;*/ 
+	margin-top: 3px; 
 	margin-right:8px;  
 	align-items: middle;
 }
